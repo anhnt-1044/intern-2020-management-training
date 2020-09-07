@@ -6,5 +6,6 @@ class Trainee::CoursesController < TraineesController
     @courses = current_user.courses.order_by_status.order_by_start_date
                            .page(params[:page])
                            .per Settings.pagination.course.default
+                           byebug
   end
 end
