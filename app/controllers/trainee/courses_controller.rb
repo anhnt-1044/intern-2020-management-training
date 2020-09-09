@@ -8,7 +8,6 @@ class Trainee::CoursesController < TraineesController
                            .order_by_start_date
                            .page(params[:page])
                            .per Settings.pagination.course.default
-                           byebug
   end
 
   def show
