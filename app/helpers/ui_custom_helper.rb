@@ -16,7 +16,7 @@ module UiCustomHelper
     finished: "check",
     done: "check",
     doing: "times",
-    nilll: "question"
+    nilll: "circle"
   }.freeze
 
   def get_bg_status status

@@ -16,7 +16,7 @@
           <div class="text-success">
             <button class="btn btn-sm btn-warning font-weight-bold">
               <%= icon "far", "clock" %>
-              <%= convert_datetime_to_date course_subject.start_date %>
+              <%= course_subject.start_date if course_subject.start_date %>
               <%= icon "fas", "long-arrow-alt-right" %>
               <span class="end-date">
                 <%= user_course_subject.deadline if user_course_subject.present? %>
