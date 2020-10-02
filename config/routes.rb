@@ -27,6 +27,8 @@ Rails.application.routes.draw do
       resources :user_course_subjects, only: :update
     end
 
+    resources :notifications, only: :index
+
     devise_for :users,
                controllers: {
                  sessions: :sessions,

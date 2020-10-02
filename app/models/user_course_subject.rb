@@ -1,6 +1,7 @@
 class UserCourseSubject < ApplicationRecord
   after_create :save_user_task
   after_update :update_user_course_progress, if: proc{|ucs| ucs.done?}
+  after_update_commit :create_notify
 
   belongs_to :course_subject
   belongs_to :user
@@ -40,6 +41,14 @@ class UserCourseSubject < ApplicationRecord
   end)
 
   private
+
+  def create_notify
+    user = self.user
+    subject = self.course_subject.subject
+    if self.done?
+      Notification.create content: "#{user.name} have finished subject: #{subject.name}", user_id: self.user_id, viewed: false
+    end
+  end
 
   def save_user_task
     task_ids = course_subject.subject.task_ids

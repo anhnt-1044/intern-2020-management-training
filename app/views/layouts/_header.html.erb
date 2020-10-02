@@ -16,25 +16,8 @@
               </span>
             </sup>
           </div>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownNotify">
-            <%= link_to root_path, class: "message-noti dropdown-item" do %>
-              <div class="row no-gutters">
-                <div class="col-md-2 d-flex align-items-center">
-                  <%= image_tag Settings.app.default_avatar, class: "notify-avatar" %>
-                </div>
-                <div class="col-md-10 notify-body text-justify">
-                  <p class="text-wrap notify-content">
-                    <%= t ".example_notify_content" %>
-                  </p>
-                  <p class="card-text">
-                    <small class="text-muted">
-                      <%= t ".example_notify_updated" %>
-                    </small>
-                  </p>
-                </div>
-              </div>
-            <% end %>
-            <%= link_to root_path, class: "dropdown-item text-center" do %>
+          <div class="dropdown-menu dropdown-menu-right list-notifications" aria-labelledby="dropdownNotify" id="list-notifications" style="height: 150px">
+            <%= link_to root_path, class: "dropdown-item text-center message-noti" do %>
               <%= t ".all_notifications"%>
             <% end %>
           </div>
